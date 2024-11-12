@@ -7,6 +7,10 @@ app.use(express.urlencoded({extended: true}))
 // enable static
 app.use(express.static(path.join(__dirname, 'public')))
 
+// enable JSON
+const bodyPaser = require('body-parser')
+app.use(bodyPaser.json())
+
 // use templates
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
